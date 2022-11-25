@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Waypoints : MonoBehaviour
 {
-    public Transform[] points;
+    public static Transform[] points;
 
     void Awake()
     {
@@ -13,5 +13,5 @@ public class Waypoints : MonoBehaviour
             points[i] = transform.GetChild(i);
         }
     }
-
 }
+   
