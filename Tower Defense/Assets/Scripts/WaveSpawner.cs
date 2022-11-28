@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
+
     [SerializeField]
     private Transform enemyPrefab;
 
@@ -16,7 +18,7 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 2f;
 
     [SerializeField]
-    private Text waveCountdownTimer;
+    private TextMeshProUGUI waveCountdownTimer;
 
     private int waveIndex = 0;
     // Update is called once per frame
