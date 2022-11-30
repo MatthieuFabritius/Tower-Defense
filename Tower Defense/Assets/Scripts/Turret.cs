@@ -14,6 +14,9 @@ public class Turret : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
 
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +76,13 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("DAKKA!!!");
+        GameObject bulletGO = (GameObject) Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+        if(bullet != null)
+        {
+            bullet.Seek(target);
+        }
     }
 
     private void OnDrawGizmosSelected()
