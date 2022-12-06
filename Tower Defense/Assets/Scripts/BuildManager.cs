@@ -1,18 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class BuildManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+
+    #region Singleton
+    public static BuildManager instance;
+    
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            Debug.LogError("A BuildManager is already here");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+
+    public GameObject standardTurretPrefab;
+
+    private void Start()
+    {
+        turretToBuild = standardTurretPrefab;
     }
 
-    // Update is called once per frame
-    void Update()
+    private GameObject turretToBuild;
+
+    public GameObject GetTurretToBuild()
     {
-        
+        return turretToBuild;
     }
+   
 }
