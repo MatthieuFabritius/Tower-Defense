@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-
     public Color hoverColor;
     public Vector3 positionOffset;
 
@@ -27,9 +26,9 @@ public class Node : MonoBehaviour
         {
 
         }
-        Debug.Log("TurretToBuild : " + turretToBuild);
+
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+        // turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
 
 

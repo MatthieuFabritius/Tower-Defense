@@ -29,7 +29,9 @@ public class BuildManager : MonoBehaviour
 
     public GameObject GetTurretToBuild()
     {
+        Debug.Log("turretToBuild" + turretToBuild);
         return turretToBuild;
+
     }
    
 }
