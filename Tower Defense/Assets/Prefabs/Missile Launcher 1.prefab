@@ -50,7 +50,7 @@ MonoBehaviour:
   ennemyTag: Ennemy
   partToRotate: {fileID: 389119806113425983}
   fireRate: 0.25
-  bulletPrefab: {fileID: 6456585916790182914, guid: 9385d1a8f2d54704aa39e7c169462227, type: 3}
+  bulletPrefab: {fileID: 6353566833669084318, guid: 1788c65eeceacf748a49b460f5a9aaaa, type: 3}
   firePoint: {fileID: 4368258275728968255}
 --- !u!1 &670997885847582062
 GameObject:
@@ -244,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6756658132933173694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00026, y: 0.00472, z: -0.0172}
+  m_LocalPosition: {x: 0.00026, y: 0.00472, z: 0.015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
