@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -9,14 +10,28 @@ public class Node : MonoBehaviour
     private GameObject turret;
     private Renderer rend;
 
+    private BuildManager buildManager;
+
     private void Start()
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+
+        buildManager = BuildManager.instance;
     }
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        if (buildManager.GetTurretToBuild() == null)
+        {
+            return;
+        }
+
         if(turret != null)
         {
             Debug.Log("Place already taken!");
@@ -27,13 +42,23 @@ public class Node : MonoBehaviour
 
         }
 
-        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        GameObject turretToBuild = buildManager.GetTurretToBuild();
         // turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
 
 
     private void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        if (buildManager.GetTurretToBuild() == null)
+        {
+            return;
+        }
+
         rend.material.color = hoverColor;
     }
 
