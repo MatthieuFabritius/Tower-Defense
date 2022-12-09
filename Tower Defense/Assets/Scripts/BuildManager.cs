@@ -30,7 +30,7 @@ public class BuildManager : MonoBehaviour
 
     }
    
-    public void SetTurretToBuild(GameObject turret)
+    public void SelectTurretToBuild(GameObject turret)
     {
         turretToBuild = turret;
     }

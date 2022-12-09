@@ -35,6 +35,7 @@ public class Bullet : MonoBehaviour
         }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        transform.LookAt(target);
     }
 
     void HitTarget()
@@ -51,7 +52,7 @@ public class Bullet : MonoBehaviour
             Damage(target);
         }
 
-        Destroy(target.gameObject);
+        
         Destroy(gameObject);
     }
 
@@ -60,14 +61,14 @@ public class Bullet : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)
         {
-            if (collider.tag == "Ennemy") ;
+            if (collider.tag == "Ennemy") 
             {
                 Damage(collider.transform);
             }
         }
     }
 
-    void Damage()
+    void Damage(Transform Ennemy)
     {
         Destroy(Ennemy.gameObject);
     }
