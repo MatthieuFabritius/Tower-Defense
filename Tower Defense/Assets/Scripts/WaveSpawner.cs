@@ -13,15 +13,16 @@ public class WaveSpawner : MonoBehaviour
     private Transform spawnPoint;
 
     [SerializeField]
-    private float timeBetweenWaves = 5f;
+    private float timeBetweenWaves = 20f;
 
-    private float countdown = 2f;
+    private float countdown = 5f;
 
     [SerializeField]
     private TextMeshProUGUI waveCountdownTimer;
 
     private int waveIndex = 0;
-    // Update is called once per frame
+  
+
     void Update()
     {
         if (countdown <=0)
@@ -30,11 +31,15 @@ public class WaveSpawner : MonoBehaviour
                 countdown = timeBetweenWaves;
             }
         countdown -= Time.deltaTime;
-        waveCountdownTimer.text = Mathf.Round(countdown).ToString();
+
+        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+
+        waveCountdownTimer.text = string.Format("{0:00,00}", countdown);
     }
     IEnumerator SpawnWave()
     {
         waveIndex++;
+        PlayerStats.rounds++;
 
         for (int i = 0; i < waveIndex; i++)
         {
