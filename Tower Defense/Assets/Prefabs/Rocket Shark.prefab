@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 889204029672216428}
   - component: {fileID: 8775246569213962988}
   m_Layer: 0
-  m_Name: tourelle_requin
+  m_Name: Rocket Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   ennemyTag: Ennemy
   partToRotate: {fileID: 889204029672216428}
   fireRate: 0.1
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 8380013191081152206, guid: 0d17a0d13c760ac4e86603e4e8eebc0a, type: 3}
   firePoint: {fileID: 4356112363415333301}
 --- !u!1 &670423754337090089
 GameObject:

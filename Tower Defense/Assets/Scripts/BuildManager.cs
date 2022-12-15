@@ -20,10 +20,12 @@ public class BuildManager : MonoBehaviour
 
     public GameObject standardTurretPrefab;
     public GameObject missileLauncherPrefab;
+    public GameObject rocketSharkPrefab;
 
     public GameObject buildEffect;
 
     private TurretBlueprint turretToBuild;
+    private Node selectedNode;
 
     public bool canBuild { get { return turretToBuild != null; }  }
     public bool hasMoney { get { return PlayerStats.money >= turretToBuild.cost; }  }
@@ -49,5 +51,12 @@ public class BuildManager : MonoBehaviour
     public void SelectTurretToBuild(TurretBlueprint turret)
     {
         turretToBuild = turret;
+        selectedNode = null;
+    }
+    
+    public void SelectNode(Node node)
+    {
+        selectedNode = node;
+        turretToBuild = null;
     }
 }
