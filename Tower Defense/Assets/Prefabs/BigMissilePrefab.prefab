@@ -128,6 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d847a6fb6fffe214a9cf6959b5e456a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 60
+  speed: 25
   explosionRadius: 10
   impactEffects: {fileID: 344487654848016956, guid: 09c3abc0ca70d8e44824eb2f4d8fa3c0, type: 3}

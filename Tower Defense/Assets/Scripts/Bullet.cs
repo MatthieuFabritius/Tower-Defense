@@ -46,6 +46,7 @@ public class Bullet : MonoBehaviour
         if (explosionRadius > 0)
         {
             Explode();
+            PlayerStats.money = PlayerStats.money + 10;
         }
         else
         {
